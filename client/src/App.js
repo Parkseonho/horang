@@ -1,17 +1,18 @@
-// import "./App.css";
-// // import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-// // import Home from "./component/Home.jsx";
+import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./component/Home.jsx";
+import horangLoGo from "./Picture/horangLOGO 1.png";
 
-// function App() {
-//   <>
-//     <div>아니 왜 안나오는데</div>
-//     {/* <BrowserRouter>
-//       <Link to="/">Home</Link>
-//       <Routes>
-//         <Route exact path="/" element={<Home />} />
-//       </Routes>
-//     </BrowserRouter> */}
-//   </>;
-// }
+function App() {
+  <BrowserRouter>
+    <Link to="/">
+      <img src={horangLoGo} alt="horangLoGo" className="inline h-6 w-8 " />
+    </Link>
 
-// export default App;
+    <Routes>
+      <Route exact path="/" element={<Home />} />
+    </Routes>
+  </BrowserRouter>;
+}
+
+export default App;
