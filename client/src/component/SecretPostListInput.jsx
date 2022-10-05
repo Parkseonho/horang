@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import moment from "moment";
 
 
 
-const SecretPostListInput = ({secretPost, setSecretPost}) => {
+const SecretPostListInput = ({secretPost}) => {
   const {title, content, id, create_date, view} = secretPost;
   const createDate = moment({create_date}).format('YY.MM.DD');
   return(

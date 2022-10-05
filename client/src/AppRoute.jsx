@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomeR from "./component/HomeR.jsx";
 import horangLoGo from "./Picture/horangLOGO 1.png";
 import "./App.css";
-import Create from "./component/Create.jsx";
+import Cre from "./component/Cre.jsx";
 
 const AppRoute = () => {
  return(
@@ -16,7 +16,7 @@ const AppRoute = () => {
 
       <Routes>
         <Route exact path="/" element={<HomeR />} />
-        <Route exact path="/create" element={<Create />} />
+        <Route exact path="/Cre" element={<Cre />} />
       </Routes>
     </BrowserRouter>
   </>
