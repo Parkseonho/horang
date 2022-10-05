@@ -1,15 +1,16 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Read from "./component/Read.jsx";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./component/Home";
 
 function App() {
- return (
-  <Router>
-   <Routes>
-    <Route path="/read" element={<Read />}></Route>
-   </Routes>
-  </Router>
- );
+  <>
+    <BrowserRouter>
+      <Link to="/">Home</Link>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  </>;
 }
 
 export default App;
