@@ -42,7 +42,7 @@ const HomeR = () => {
             />
           ))}      
       </div>
-      <Link to="/Cre" > 생성  </Link>
+      <Link to="/create" > 생성  </Link>
     </>
   );
 }

@@ -26,19 +26,31 @@ router.get("/", (request, response) => {
 
 /* 보내기 */
 
-router.post("/create", (request, response) => {
-  console.log("1");
-  const sqlInsert = "INSERT INTO secretPost(title, content) VALUES(?,?)";
+// router.post("/create", (request, response) => {
+//   console.log("11212");
+//   const sqlInsert = "INSERT INTO secretPost(title, content) VALUES(?,?)";
 
-  db.query(
-    sqlInsert,
-    [`${request.body.title}`, `${request.body.content}`],
-    function (err, result) {
-      if (err) throw err;
-      console.log(result);
-      response.redirect("/");
-    }
-  );
+//   db.query(
+//     sqlInsert,
+//     [`${request.body.title}`, `${request.body.content}`],
+//     function (err, result) {
+//       if (err) throw err;
+//       console.log(result);
+//       response.redirect("/");
+//     }
+//   );
+// });
+
+router.post("/create", (request, response) => {
+  console.log(request.body);
+  const title = `${request.body.title}`;
+  const content = `${request.body.content}`;
+  const sql = "INSERT INTO secretPost (title, content) VALUES (?,?)";
+  db.query(sql, [title, content], function (err, result) {
+    if (err) throw err;
+    console.log("비밀게시물 생성 완료");
+    response.redirect("/");
+  });
 });
 
 module.exports = router;

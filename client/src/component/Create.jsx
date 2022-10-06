@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+  const nav = useNavigate();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+ 
   return(
   <>
   <h1>비밀 게시물 업로드</h1>
@@ -12,15 +15,20 @@ const Create = () => {
     onSubmit={async(e) => {
        e.preventDefault();
        const data = await axios({
-        url: "http://localhost:5000/create",
+        url: "http://localhost:3000/create",
         method: "POST",
         data: {
           title, 
           content
         },
+        withCredentials: true,
        });      
-       setTitle(data.data.title);
-       setContent(data.data.content); 
+       if(data.data!==null){
+        nav("/");
+        console.log("성공");
+       }else{
+        console.log("오류");
+       }
     }}>
          <div >
             <label >
@@ -30,6 +38,7 @@ const Create = () => {
               type="text"
               placeholder="제목"
               value={title}
+              name="title"
               onChange={(e) => {
                 setTitle(e.target.value);
               }}
@@ -44,6 +53,7 @@ const Create = () => {
               type="text"
               placeholder="내용"
               value={content}
+              name="content"
               onChange={(e) => {
                 setContent(e.target.value);
               }}

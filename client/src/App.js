@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./component/Home.jsx";
+import Home from "./component/HomeR.jsx";
 import horangLoGo from "./Picture/horangLOGO 1.png";
 
 function App() {
