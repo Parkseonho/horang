@@ -39,4 +39,15 @@ router.post("/create", (request, response) => {
   );
 });
 
+/* 업데이트 */
+
+router.post("/update/:id", (request, response) => {
+  const sql = "UPDATE secretPost SET ? WHERE id = " + request.params.id;
+  db.query(sql, request.body, function (err, result) {
+    if (err) throw err;
+    console.log("비밀게시물 업데이트 완료");
+    response.redirect("/");
+  });
+});
+
 module.exports = router;
